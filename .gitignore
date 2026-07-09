@@ -1,0 +1,16 @@
+# Binários
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Diretórios de build
+/bin/
+/dist/
+
+# VS Code
+.vscode/
+
+# Arquivos temporários
+*.log
