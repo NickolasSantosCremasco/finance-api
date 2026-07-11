@@ -15,7 +15,8 @@ type Transaction struct {
 	Date		time.Time
 }
 
-func (t Transaction) Print() { /* A Transaction Possui um método Chamado Print*/
+func (t Transaction) Print() { /* The Transaction have a method called Print*/
+	/*t Transaction is called Receiver, he says that This Method belongs to Transation Type""*/ 
 	fmt.Println("========== TRANSACTION ==========")
 	fmt.Println("ID:", t.ID)
 	fmt.Println("Descrição:", t.Description)
