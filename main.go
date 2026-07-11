@@ -1,9 +1,9 @@
 package main
 
 import (
-
-	"time"
 	"finance-api/internal/transaction"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -17,4 +17,10 @@ func main() {
 	}
 
 	t.Print()
-}
+
+	if t.IsExpense() {
+		fmt.Println("É uma despesa")
+	} else {
+		fmt.Println("É uma receita")
+	}
+ }
