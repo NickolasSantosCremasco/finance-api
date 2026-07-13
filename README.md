@@ -1,47 +1,106 @@
 # 💰 Finance API
 
-Uma API REST desenvolvida em Go para gerenciamento financeiro pessoal.
+> 🚧 **Status:** Em desenvolvimento
 
-Este projeto está sendo desenvolvido com foco em aprendizado da linguagem Go e boas práticas de Engenharia de Software, seguindo uma arquitetura em camadas e documentação desde o início do desenvolvimento.
+Uma API REST desenvolvida em **Go (Golang)** para gerenciamento financeiro pessoal.
+
+Este projeto está sendo desenvolvido com o objetivo de aprender a linguagem Go através da construção de uma aplicação real, aplicando boas práticas de Engenharia de Software, arquitetura em camadas, documentação e organização de projetos.
 
 ---
 
 # 🎯 Objetivos
 
-O objetivo deste projeto é aprender Go construindo uma aplicação real.
+Este projeto não tem como objetivo apenas construir uma API.
 
-Ao longo do desenvolvimento serão estudados:
+O principal foco é aprender Go de forma prática, utilizando conceitos encontrados em aplicações reais.
 
-- Estruturas da linguagem Go
-- Organização de projetos
-- Arquitetura em camadas
+Durante o desenvolvimento serão estudados:
+
+- Organização de projetos Go
+- Modelagem de domínio
+- Structs
+- Methods
+- Receivers
+- Ponteiros
+- Tratamento de erros
+- Interfaces
 - APIs REST
+- JSON
 - Banco de Dados
-- Autenticação JWT
+- PostgreSQL
 - Docker
+- JWT
 - Testes
 - Concorrência (Goroutines e Channels)
 
 ---
 
+# ✨ Funcionalidades Planejadas
+
+- Cadastro de usuários
+- Login com autenticação JWT
+- Cadastro de receitas
+- Cadastro de despesas
+- Categorias personalizadas
+- Histórico financeiro
+- Consulta de transações
+- Dashboard financeiro
+- Relatórios
+- Exportação de dados
+
+---
+
 # 🏛️ Arquitetura
 
-O projeto seguirá uma arquitetura em camadas que poderá ser vista em:
+O projeto segue uma arquitetura em camadas.
 
-/docs/architecture
+```text
+Cliente
+    │
+HTTP Request
+    │
+    ▼
+Handler
+    │
+    ▼
+Service
+    │
+    ▼
+Repository
+    │
+    ▼
+Database (PostgreSQL)
+```
+
+Toda a documentação visual da arquitetura será mantida em:
+
+```text
+docs/
+└── architecture/
+```
+
+Os diagramas foram desenvolvidos utilizando **Excalidraw**.
 
 ---
 
 # 📂 Estrutura do Projeto
 
-```
+```text
 finance-api/
 │
 ├── cmd/
 ├── configs/
 ├── docs/
 │   └── architecture/
+│       ├── system.excalidraw
+│       ├── domain.excalidraw
+│       ├── request-flow.excalidraw
+│       └── database.excalidraw
+│
 ├── internal/
+│   └── transaction/
+│       └── transaction.go
+│
 ├── pkg/
 ├── scripts/
 │
@@ -56,21 +115,80 @@ finance-api/
 # 📦 Tecnologias
 
 - Go
-- PostgreSQL (futuro)
-- Docker (futuro)
-- JWT (futuro)
+- PostgreSQL *(em desenvolvimento)*
+- Docker *(em desenvolvimento)*
+- JWT *(em desenvolvimento)*
+- Git
+- GitHub
+- Excalidraw
+
+---
+
+# 📚 Conceitos Estudados
+
+## ✅ Go
+
+- [x] Packages
+- [x] Modules
+- [x] Structs
+- [x] Methods
+- [x] Receivers
+- [x] Ponteiros
+- [x] Error Handling
+
+## 🚧 Próximos Estudos
+
+- [ ] Interfaces
+- [ ] JSON
+- [ ] HTTP
+- [ ] Context
+- [ ] Middleware
+- [ ] PostgreSQL
+- [ ] Docker
+- [ ] Testes
+- [ ] Goroutines
+- [ ] Channels
+
+---
+
+# 📌 Modelo de Domínio
+
+A primeira entidade modelada foi:
+
+```text
+Transaction
+│
+├── ID
+├── Description
+├── Amount
+├── Category
+├── Merchant
+└── Date
+```
+
+Novas entidades serão adicionadas durante o desenvolvimento, como:
+
+```text
+User
+
+Wallet
+
+Category
+
+Transaction
+```
 
 ---
 
 # 🚀 Como executar
 
-Clone o projeto:
+Clone o repositório:
 
 ```bash
 git clone https://github.com/NickolasSantosCremasco/finance-api.git
 ```
 
-Entre na pasta:
+Entre na pasta do projeto:
 
 ```bash
 cd finance-api
@@ -84,38 +202,136 @@ go run .
 
 ---
 
-# 📚 Roadmap
+# 🛣️ Roadmap
 
-## ✔️ Etapa 1
+## ✅ Etapa 1 — Configuração Inicial
+
 - [x] Criar módulo Go
 - [x] Configurar GitHub
 - [x] Organizar estrutura do projeto
+- [x] Criar documentação inicial
 
-## 🚧 Etapa 2
-- [ ] Structs
-- [ ] Modelagem da entidade Transaction
+---
 
-## 🚧 Etapa 3
+## ✅ Etapa 2 — Fundamentos da Linguagem
+
+- [x] Structs
+- [x] Methods
+- [x] Receivers
+- [x] Ponteiros
+- [x] Tratamento de erros
+- [x] Modelagem da entidade Transaction
+
+---
+
+## 🚧 Etapa 3 — API REST
+
+- [ ] HTTP Server
+- [ ] Rotas
+- [ ] Handlers
 - [ ] JSON
-- [ ] API REST
+- [ ] Validação
 
-## 🚧 Etapa 4
+---
+
+## 🚧 Etapa 4 — Banco de Dados
+
 - [ ] PostgreSQL
+- [ ] SQL
+- [ ] Repository Pattern
+- [ ] Migrations
 
-## 🚧 Etapa 5
-- [ ] Autenticação JWT
+---
 
-## 🚧 Etapa 6
-- [ ] Docker
+## 🚧 Etapa 5 — Autenticação
 
-## 🚧 Etapa 7
-- [ ] Testes
+- [ ] Login
+- [ ] Cadastro
+- [ ] JWT
+- [ ] Middleware
 
-## 🚧 Etapa 8
-- [ ] Deploy
+---
+
+## 🚧 Etapa 6 — Docker
+
+- [ ] Dockerfile
+- [ ] Docker Compose
+
+---
+
+## 🚧 Etapa 7 — Testes
+
+- [ ] Unit Tests
+- [ ] Integration Tests
+- [ ] Benchmarks
+
+---
+
+## 🚧 Etapa 8 — Concorrência
+
+- [ ] Goroutines
+- [ ] Channels
+- [ ] Context
+- [ ] Worker Pool
+
+---
+
+## 🚧 Etapa 9 — Deploy
+
+- [ ] Deploy da API
+- [ ] CI/CD
+- [ ] Documentação da API
+
+---
+
+# 📅 Diário de Desenvolvimento
+
+## Aula 01
+
+- Configuração do ambiente Go
+- Criação do módulo
+- Organização inicial do projeto
+- GitHub
+
+## Aula 02
+
+- Structs
+- Modelagem da entidade Transaction
+
+## Aula 03
+
+- Methods
+- Receivers
+- Ponteiros
+- Error Handling
+
+> Este diário será atualizado conforme o projeto evolui.
+
+---
+
+# 📖 Aprendizados
+
+Este projeto está sendo utilizado para estudar:
+
+- Engenharia de Software
+- Arquitetura em Camadas
+- Boas práticas em Go
+- Organização de projetos
+- Modelagem de domínio
+- Documentação técnica
+- Git e GitHub
+- Desenvolvimento de APIs REST
+
+---
+
+# 🤝 Contribuição
+
+Este projeto está sendo desenvolvido para fins de aprendizado.
+
+Sugestões e melhorias são sempre bem-vindas.
 
 ---
 
 # 📖 Licença
 
-Projeto desenvolvido para fins de estudo.
+Este projeto é de código aberto e está sendo desenvolvido exclusivamente para fins educacionais e de estudo da linguagem Go.
