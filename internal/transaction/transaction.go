@@ -38,3 +38,18 @@ func (t Transaction) IsIncome() bool {
 func (t Transaction) Summary() string {
 	return fmt.Sprintf("%s - R$ %.2f", t.Description, t.Amount)
 }
+
+
+// When a method or function receives a struct by value,
+// Go creates a copy of that struct.
+// Any changes are made to the copy, while the original
+// struct remains unchanged.
+func (t *Transaction) ApplyDiscount(value float64) error {
+	if value > t.Amount {
+		return fmt.Errorf("Desconto não pode ser maior que o valor da transação")
+	}
+
+	
+	t.Amount -= value
+	return nil
+}
